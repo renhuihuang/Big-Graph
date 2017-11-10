@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Commun{
 
+	// Cette fonction cherche le nombre de voisin commun de deux noeud.
 	public static int voisin(int graphe_i, int graphe_j, int[][] graphe, int nb_node){
 		int i;
 		int nb_voisin = 0;
@@ -16,6 +17,7 @@ public class Commun{
 		return nb_voisin;
 	}
 
+	// Cette fonction cherche le degr√© d'un noeud.
 	public static int degre(int graphe_i, int[][] graphe, int nb_node){
 		int i;
 		int nb_degre = 0;
@@ -28,6 +30,8 @@ public class Commun{
 		return nb_degre;
 	}
 
+	// Ceci est une fonction de Test.
+	// Cette fonction cr√©e des grands graphes.
     public static void Affichage(String fichier){
 
         List<String> items = new ArrayList<String>();
@@ -117,7 +121,7 @@ public class Commun{
 
 			
 			//#####################################
-            // CrÈation de la matrice
+            // Cr√©ation de la matrice
 			//#####################################
 			
 			
@@ -142,7 +146,7 @@ public class Commun{
 						}
 					}
 				}
-				// On a maintenant une matrice qui correspond ®§ l'instant k.
+				// On a maintenant une matrice qui correspond √† l'instant k.
 				
 				
 				
@@ -189,14 +193,14 @@ public class Commun{
 				
 				
 				//#####################################
-	            // DegrÈ de chaque sommet
+	            // Degr√© de chaque sommet
 				//#####################################
 
 				/*
 				for(j = 1; j<50; j++){
 					d = degre(j, graphe, nb_node+1);
 					
-					//System.out.println("le degre ‡ l'instant " + k + " est " + d + "pour le noeud numÈro : " + j);
+					//System.out.println("le degre √† l'instant " + k + " est " + d + "pour le noeud num√©ro : " + j);
 					if(j == 28 && mm<8000){
 						test[mm] = d;
 						mm++;
@@ -228,28 +232,28 @@ public class Commun{
 			
 				/*
 				try{
-					File ff=new File("resultat28.txt"); // dÈfinir l'arborescence
+					File ff=new File("resultat28.txt"); // d√©finir l'arborescence
 					ff.createNewFile();
 					FileWriter ffw=new FileWriter(ff);
 					for(k = 0; k<9999; k++){
 						ffw.write ("" + test[k]);
 						ffw.write ("\r\n");
 					}
-					ffw.close(); // fermer le fichier ‡ la fin des traitements
+					ffw.close(); // fermer le fichier √† la fin des traitements
 					} 
 				catch (Exception e) {}
 				 */
 
 			
 			try{
-				File ff=new File("Interconnexion_result3.txt"); // dÈfinir l'arborescence
+				File ff=new File("Interconnexion_result3.txt"); // d√©finir l'arborescence
 				ff.createNewFile();
 				FileWriter ffw=new FileWriter(ff);
 				for(k = 0; k<9999; k++){
 					ffw.write ("" + interconnexion[k]);
 					ffw.write ("\r\n");
 				}
-				ffw.close(); // fermer le fichier ‡ la fin des traitements
+				ffw.close(); // fermer le fichier √† la fin des traitements
 				} 
 			catch (Exception e) {}
 
