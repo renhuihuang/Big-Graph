@@ -8,6 +8,9 @@ public class Degree {
 	// Modification de la proba
 	//##########################################
 	
+	
+	// Si deux neouds ne sont pas connectés, alors la probabilité de leur prochaine liaison augmente.
+	// Si un noeud se connecte aux plusieurs noeuds, alors ce noeud est considéré comme "populaire".
 	public static void Ajout_proba(int noeud, int degre, double[] creation, double[] deletion){
 		if(degre == 0 && Etre_Isoler(noeud, creation, deletion) == false){
 			creation[noeud] = 0.5;
@@ -17,6 +20,7 @@ public class Degree {
 		}	
 	}
 	
+	// Si un noeud possède plein de voisin et il n'est pas populaire, alors on va retirer des voisins.
 	public static void Retire_proba(int noeud, int degre, double[] creation, double[] deletion){
 		if(degre == 1 && Etre_Populaire(noeud, creation, deletion) == false){
 			Isoler(noeud, creation, deletion);
@@ -26,11 +30,13 @@ public class Degree {
 		}	
 	}
 	
+	// Lorsqu'un noeud est isolé, alors ses voisins diminuent.
 	public static void Isoler(int noeud, double[] creation, double[] deletion){
 		creation[noeud] = 0.01;
 		deletion[noeud] = 0.5;
 	}
 	
+	// Si un noeud est populaire, le nombre de voisin augmente.
 	public static void Populaire(int noeud, double[] creation, double[] deletion){
 		creation[noeud] = 1;
 		deletion[noeud] = 0.001;
@@ -71,7 +77,7 @@ public class Degree {
 			deletion[i] = 0.05;
 		}
 
-		//Ouverture et cr�ation
+		//Ouverture et création
 		try{
 			File f = new File ("DegreeData.txt");
 			FileWriter gw = new FileWriter (f);
@@ -86,7 +92,7 @@ public class Degree {
 								Ajout_proba(i, Commun.degre(i, data, nb_noeud), creation, deletion);
 								Ajout_proba(j, Commun.degre(j, data, nb_noeud), creation, deletion);
 								
-								//Cr�ation des donn�es
+								//Création des données
 								data[i][j]=1;
 								gw.write (String.valueOf(i));
 								gw.write (" ");
@@ -99,7 +105,7 @@ public class Degree {
 								//Modification de la proba pour i et j
 								Retire_proba(i, Commun.degre(i, data, nb_noeud), creation, deletion);
 								Retire_proba(j, Commun.degre(j, data, nb_noeud), creation, deletion);
-								//Termination des donn�es
+								//Termination des données
 								data[i][j]=0;
 								gw.write (String.valueOf(k));
 								gw.write ("\n");
