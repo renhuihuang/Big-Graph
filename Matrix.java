@@ -33,12 +33,12 @@ public class Matrix{
             StringTokenizer splitter;
             int[][] data;
             int[][] dataCS;
-			int[][] dataIC;
+	    int[][] dataIC;
 
 
-			//#####################################
-            // Enregistrement des donnees
-			//#####################################
+	//#####################################
+        // Enregistrement des donnees
+	//#####################################
             while ((line=br.readLine())!=null){
                 items.add(line);
             }
@@ -61,9 +61,9 @@ public class Matrix{
 
 
 
-			//##########################################
-            // Examination et Noramalisation des donnees
-			//##########################################
+	//##########################################
+        // Examination et Noramalisation des donnees
+	//##########################################
 
             nb_arete = counter;
             min_duration = data[0][2];
@@ -89,9 +89,9 @@ public class Matrix{
 
 
 
-			//##########################################
-            // Regroupement des donnees
-			//##########################################
+	//##########################################
+        // Regroupement des donnees
+	//##########################################
             dataCS = new int[nb_arete * 2][4];
  
             for(i = 0; i < nb_arete; i++){
@@ -141,7 +141,7 @@ public class Matrix{
                 System.out.println(dataCS[i][0] + " " + dataCS[i][1] + " " + dataCS[i][2] + " " + dataCS[i][3]);
             }*/
 
-			int connect1, connect2, nb_connect, duration_connect, k;
+	int connect1, connect2, nb_connect, duration_connect, k;
 
 
 
