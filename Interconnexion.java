@@ -7,18 +7,21 @@ import java.io.*;
 
 public class Interconnexion {
 
-	
+	// Cette fonction construit la CDF
 	public static double Proba(int N){
 		double result = 0.001*N*N*N+ 0.3854*N*N + 1913.9;
 		return result;
 	}
 	
+	// Je ne sais plus ce que cela sert.
 	public static double Variance(){
 		double variance = Math.random();
 		variance = variance - 0.5;
 		variance = variance * 50;
 		return variance;
 	}
+	
+	// La fonction de Durée interconnexion:
 	public static double Inter(int N){
 		double result;
 		
@@ -26,12 +29,14 @@ public class Interconnexion {
 		return result;
 	}
 	
+	// La fonction de Durée de la connexion:
 	public static double Duree(int N){
 		double result = 0;
 		result = -0.000006*N*N*N*N*N*N+ 0.0002*N*N*N- 0.0134*N*N+ 0.3454*N + 2.8088;
 		return result;
 	}
 	
+	// On construit enfin le graph aléatoire.
 	public static void Creation_graphe(int nb_noeud,  int nb_temps){
 		
 		int i, j, k;
@@ -59,7 +64,7 @@ public class Interconnexion {
 			}
 		}
 
-		//Ouverture et cr�ation
+		//Ouverture et création
 		try{
 			File f = new File ("InterconnexionData.txt");
 			FileWriter gw = new FileWriter (f);
