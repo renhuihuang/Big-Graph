@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Matrix{
 
+	// cette fonction fait la normalisation des graphes, de ramener les instants initiaux au 0.
     public static void Normalisation(int[][] matrice, int taille, int min_duration){
         int i;
         for(i = 0; i<taille; i++){
@@ -13,6 +14,7 @@ public class Matrix{
     }
 
 
+	// Cette fonction recherche les informations importantes des grands graphes.
     public static void Affichage(String fichier){
 
         List<String> items = new ArrayList<String>();
@@ -90,7 +92,7 @@ public class Matrix{
 
 
 	//##########################################
-        // Regroupement des donnees
+        // Regroupement des donnees sous une autre forme qui est plus facile à étudier.
 	//##########################################
             dataCS = new int[nb_arete * 2][4];
  
